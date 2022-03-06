@@ -1,0 +1,188 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mukuru.co.za/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://mukuru.co.za/" name="AML">
+<types>
+<xsd:schema>
+<xsd:import namespace="http://mukuru.co.za/" schemaLocation="https://blacklist-staging.app-stg.mukuru.io/AML/Blacklist?xsd=1"/>
+</xsd:schema>
+</types>
+<message name="getWhitelistedRecords">
+<part name="parameters" element="tns:getWhitelistedRecords"/>
+</message>
+<message name="getWhitelistedRecordsResponse">
+<part name="parameters" element="tns:getWhitelistedRecordsResponse"/>
+</message>
+<message name="checkEntity">
+<part name="parameters" element="tns:checkEntity"/>
+</message>
+<message name="checkEntityResponse">
+<part name="parameters" element="tns:checkEntityResponse"/>
+</message>
+<message name="getBlacklistDetails">
+<part name="parameters" element="tns:getBlacklistDetails"/>
+</message>
+<message name="getBlacklistDetailsResponse">
+<part name="parameters" element="tns:getBlacklistDetailsResponse"/>
+</message>
+<message name="checkIndividual">
+<part name="parameters" element="tns:checkIndividual"/>
+</message>
+<message name="checkIndividualResponse">
+<part name="parameters" element="tns:checkIndividualResponse"/>
+</message>
+<message name="checkBlacklist">
+<part name="parameters" element="tns:checkBlacklist"/>
+</message>
+<message name="checkBlacklistResponse">
+<part name="parameters" element="tns:checkBlacklistResponse"/>
+</message>
+<message name="checkEntityBasic">
+<part name="parameters" element="tns:checkEntityBasic"/>
+</message>
+<message name="checkEntityBasicResponse">
+<part name="parameters" element="tns:checkEntityBasicResponse"/>
+</message>
+<message name="checkIndividualBasic">
+<part name="parameters" element="tns:checkIndividualBasic"/>
+</message>
+<message name="checkIndividualBasicResponse">
+<part name="parameters" element="tns:checkIndividualBasicResponse"/>
+</message>
+<message name="addWhitelisting">
+<part name="parameters" element="tns:addWhitelisting"/>
+</message>
+<message name="addWhitelistingResponse">
+<part name="parameters" element="tns:addWhitelistingResponse"/>
+</message>
+<message name="removeWhitelisting">
+<part name="parameters" element="tns:removeWhitelisting"/>
+</message>
+<message name="removeWhitelistingResponse">
+<part name="parameters" element="tns:removeWhitelistingResponse"/>
+</message>
+<portType name="Blacklist">
+<operation name="getWhitelistedRecords">
+<input wsam:Action="http://mukuru.co.za/Blacklist/getWhitelistedRecordsRequest" message="tns:getWhitelistedRecords"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/getWhitelistedRecordsResponse" message="tns:getWhitelistedRecordsResponse"/>
+</operation>
+<operation name="checkEntity">
+<input wsam:Action="http://mukuru.co.za/Blacklist/checkEntityRequest" message="tns:checkEntity"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/checkEntityResponse" message="tns:checkEntityResponse"/>
+</operation>
+<operation name="getBlacklistDetails">
+<input wsam:Action="http://mukuru.co.za/Blacklist/getBlacklistDetailsRequest" message="tns:getBlacklistDetails"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/getBlacklistDetailsResponse" message="tns:getBlacklistDetailsResponse"/>
+</operation>
+<operation name="checkIndividual">
+<input wsam:Action="http://mukuru.co.za/Blacklist/checkIndividualRequest" message="tns:checkIndividual"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/checkIndividualResponse" message="tns:checkIndividualResponse"/>
+</operation>
+<operation name="checkBlacklist">
+<input wsam:Action="http://mukuru.co.za/Blacklist/checkBlacklistRequest" message="tns:checkBlacklist"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/checkBlacklistResponse" message="tns:checkBlacklistResponse"/>
+</operation>
+<operation name="checkEntityBasic">
+<input wsam:Action="http://mukuru.co.za/Blacklist/checkEntityBasicRequest" message="tns:checkEntityBasic"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/checkEntityBasicResponse" message="tns:checkEntityBasicResponse"/>
+</operation>
+<operation name="checkIndividualBasic">
+<input wsam:Action="http://mukuru.co.za/Blacklist/checkIndividualBasicRequest" message="tns:checkIndividualBasic"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/checkIndividualBasicResponse" message="tns:checkIndividualBasicResponse"/>
+</operation>
+<operation name="addWhitelisting">
+<input wsam:Action="http://mukuru.co.za/Blacklist/addWhitelistingRequest" message="tns:addWhitelisting"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/addWhitelistingResponse" message="tns:addWhitelistingResponse"/>
+</operation>
+<operation name="removeWhitelisting">
+<input wsam:Action="http://mukuru.co.za/Blacklist/removeWhitelistingRequest" message="tns:removeWhitelisting"/>
+<output wsam:Action="http://mukuru.co.za/Blacklist/removeWhitelistingResponse" message="tns:removeWhitelistingResponse"/>
+</operation>
+</portType>
+<binding name="BlacklistPortBinding" type="tns:Blacklist">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="getWhitelistedRecords">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkEntity">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBlacklistDetails">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkIndividual">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkBlacklist">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkEntityBasic">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkIndividualBasic">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addWhitelisting">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="removeWhitelisting">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="AML">
+<port name="BlacklistPort" binding="tns:BlacklistPortBinding">
+<soap:address location="https://blacklist-staging.app-stg.mukuru.io/AML/Blacklist"/>
+</port>
+</service>
+</definitions>
