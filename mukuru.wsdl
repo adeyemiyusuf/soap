@@ -1,7 +1,7 @@
 <definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mukuru.co.za/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://mukuru.co.za/" name="AML">
 <types>
 <xsd:schema>
-<xsd:import namespace="http://mukuru.co.za/" schemaLocation="http://blacklist-staging.app-stg.mukuru.io/AML/Blacklist?xsd=1"/>
+<xsd:import namespace="http://mukuru.co.za/" schemaLocation="https://blacklist-staging.app-stg.mukuru.io/AML/Blacklist?xsd=1"/>
 </xsd:schema>
 </types>
 <message name="getWhitelistedRecords">
@@ -182,7 +182,7 @@
 </binding>
 <service name="AML">
 <port name="BlacklistPort" binding="tns:BlacklistPortBinding">
-<soap:address location="http://blacklist-staging.app-stg.mukuru.io/AML/Blacklist"/>
+<soap:address location="https://blacklist-staging.app-stg.mukuru.io/AML/Blacklist"/>
 </port>
 </service>
 </definitions>
